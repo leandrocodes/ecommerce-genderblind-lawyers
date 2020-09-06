@@ -1,4 +1,4 @@
-# Helping LGBTQIA+ Comunity to find Gender Blind Lawyers
+# Helping LGBTQIA+ Community to find Gender Blind Lawyers
 
 > Nuxt starter for CodeSandBox (used for https://template.nuxtjs.org)
 
