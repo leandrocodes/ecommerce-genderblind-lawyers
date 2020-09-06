@@ -26,7 +26,7 @@
           type="password"
           name="password"
         />
-        <input type="submit" value="Login" />
+        <input type="submit" :value="submitButton" />
       </form>
     </section>
   </div>
@@ -38,14 +38,22 @@ export default {
     user: {
       email: '',
       password: ''
-    }
+    },
+    isLoading: false
   }),
+  computed: {
+    submitButton() {
+      return this.isLoading ? 'Carregando...' : 'Login'
+    }
+  },
   methods: {
     async login() {
+      this.isLoading = true
       const { email, password } = this.user
       try {
         await this.$fireAuth.signInWithEmailAndPassword(email, password)
         this.$router.push('/dashboard')
+        this.isLoading = false
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
