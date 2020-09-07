@@ -10,7 +10,7 @@
       </div>
       <!-- <h1 class="title">Gender Blinders <span>Lawyers</span></h1> -->
 
-      <nav>
+      <nav class="txt-upper">
         <ul>
           <li>
             <nuxt-link to="/signup"> Sign Up </nuxt-link>
