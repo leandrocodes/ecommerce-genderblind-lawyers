@@ -1,3 +1,9 @@
+@import './colors.scss';
 .container {
   padding: 0 1rem;
+}
+
+html,
+body {
+  background-color: $bg-color;
 }
