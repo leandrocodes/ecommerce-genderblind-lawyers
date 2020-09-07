@@ -39,17 +39,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/scss/main.scss';
+.container {
+  min-height: 60vh;
+  padding-top: 2rem;
+  background-color: $primary;
+}
 .title {
-  margin-top: 2rem;
   h1,
   h2 {
     text-align: center;
   }
   h2 {
-    font-size: 1.75rem;
+    font-size: 2.25rem;
   }
   h1 {
-    font-size: 3.25rem;
+    font-size: 3rem;
   }
 }
 </style>
