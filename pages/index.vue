@@ -4,7 +4,11 @@
       <h1>Carregando...</h1>
     </template>
     <template v-else>
-      <h1 class="title">Gender Blinders</h1>
+      <div class="title">
+        <h2 class="fw-normal">Gender Blinders</h2>
+        <h1 class="fw-bold">Lawyers</h1>
+      </div>
+      <!-- <h1 class="title">Gender Blinders <span>Lawyers</span></h1> -->
 
       <nav>
         <ul>
@@ -34,4 +38,18 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.title {
+  margin-top: 2rem;
+  h1,
+  h2 {
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+</style>
