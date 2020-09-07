@@ -39,7 +39,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
 .container {
   min-height: 60vh;
   padding-top: 2rem;
