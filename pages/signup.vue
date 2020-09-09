@@ -11,7 +11,7 @@
     </nav>
 
     <section>
-      <form @submit.prevent="createUser">
+      <form @submit.prevent="signUp">
         <input
           id="email"
           v-model="user.email"
@@ -41,7 +41,7 @@ export default {
     }
   }),
   methods: {
-    async createUser() {
+    async signUp() {
       const { email, password } = this.user
       try {
         await this.$fireAuth.createUserWithEmailAndPassword(email, password)
