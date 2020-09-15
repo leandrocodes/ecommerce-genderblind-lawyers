@@ -1,11 +1,17 @@
-@import 'definitions/typography.scss';
-@import 'definitions/base.scss';
-@import 'definitions/colors.scss';
+@import 'definitions/typography.sass';
+@import 'definitions/colors.sass';
+@import 'helpers/typography.sass';
+@import 'utilities/initial-variables.sass';
+@import 'utilities/functions.sass';
+@import 'utilities/derived-variables.sass';
+@import 'utilities/animations.sass';
+@import 'utilities/mixins.sass';
+@import 'utilities/controls.sass';
 @import 'base/minireset.sass';
+@import 'elements/other.sass';
 @import 'grid/columns.sass';
 @import 'grid/tiles.sass';
 @import 'helpers/spacing.sass';
-@import 'helpers/typography.scss';
 
 html,
 body {

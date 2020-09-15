@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <main class="row">
     <template v-if="isLoading">
       <h1>Carregando...</h1>
     </template>
@@ -21,7 +21,7 @@
         </ul>
       </nav>
     </template>
-  </div>
+  </main>
 </template>
 
 <script>
