@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="title">Sign In</h1>
+    <h1 class="title">Sign Up</h1>
 
     <nav>
       <ul>
@@ -11,7 +11,7 @@
     </nav>
 
     <section>
-      <form @submit.prevent="login">
+      <form @submit.prevent="signUp">
         <input
           id="email"
           v-model="user.email"
@@ -26,7 +26,7 @@
           type="password"
           name="password"
         />
-        <input type="submit" :value="submitButton" />
+        <input type="submit" value="Create User" />
       </form>
     </section>
   </div>
@@ -38,22 +38,18 @@ export default {
     user: {
       email: '',
       password: ''
-    },
-    isLoading: false
-  }),
-  computed: {
-    submitButton() {
-      return this.isLoading ? 'Carregando...' : 'Login'
     }
-  },
+  }),
   methods: {
-    async login() {
-      this.isLoading = true
+    async signUp() {
       const { email, password } = this.user
       try {
-        await this.$fireAuth.signInWithEmailAndPassword(email, password)
-        this.$router.push('/dashboard')
-        this.isLoading = false
+        await this.$fireAuth.createUserWithEmailAndPassword(email, password)
+        await this.$fireStore.collection('users').add({
+          name: 'Asda',
+          surname: 'Fjkl'
+        })
+        // console.log(id)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
