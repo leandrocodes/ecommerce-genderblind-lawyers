@@ -1,10 +1,13 @@
-@import './definitions/typography.scss';
-@import './definitions/base.scss';
-@import './definitions/colors.scss';
-@import './helpers/all';
+@import 'definitions/typography.scss';
+@import 'definitions/base.scss';
+@import 'definitions/colors.scss';
+@import 'base/minireset.sass';
+@import 'grid/columns.sass';
+@import 'grid/tiles.sass';
+@import 'helpers/spacing.sass';
+@import 'helpers/typography.scss';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html,
+body {
+  background-color: $bg-color;
 }
