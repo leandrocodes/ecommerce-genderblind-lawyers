@@ -66,8 +66,11 @@ export default {
       this.inputValue = 'Carregando...'
       const { email, password } = this.user
       try {
-        await this.$fireAuth.createUserWithEmailAndPassword(email, password)
-        await this.$fireStore.collection('users').add({
+        const { user } = await this.$fireAuth.createUserWithEmailAndPassword(
+          email,
+          password
+        )
+        await this.$fireStore.collection('users').doc(user.uid).set({
           name: this.user.name,
           phone: this.user.phone
         })

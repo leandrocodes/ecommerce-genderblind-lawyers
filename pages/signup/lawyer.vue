@@ -74,15 +74,17 @@ export default {
       this.inputValue = 'Carregando...'
       const { email, password } = this.user
       try {
-        await this.$fireAuth.createUserWithEmailAndPassword(email, password)
-        await this.$fireStore.collection('lawyers').add({
+        const { user } = await this.$fireAuth.createUserWithEmailAndPassword(
+          email,
+          password
+        )
+        await this.$fireStore.collection('lawyers').doc(user.uid).set({
           name: this.user.name,
           subscription: this.user.subscription,
           phone: this.user.phone
         })
         this.inputValue = 'Register'
         this.$router.push({ name: 'dashboard' })
-        // console.log(id)
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
