@@ -4,22 +4,26 @@
       <h1>Carregando...</h1>
     </template>
     <template v-else>
-      <div class="title">
-        <h2 class="fw-normal">Gender Blinders</h2>
-        <h1 class="fw-bold">Lawyers</h1>
+      <div class="column is-6">
+        <div class="title">
+          <h2 class="fw-normal">Gender Blinders</h2>
+          <h1 class="fw-bold">Lawyers</h1>
+        </div>
       </div>
       <!-- <h1 class="title">Gender Blinders <span>Lawyers</span></h1> -->
 
-      <nav class="txt-upper">
-        <ul>
-          <li>
-            <nuxt-link to="/signup"> Sign Up </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/signin"> Sign In </nuxt-link>
-          </li>
-        </ul>
-      </nav>
+      <div class="column is-6">
+        <nav class="txt-upper float-right">
+          <ul>
+            <li>
+              <nuxt-link to="/signup"> Sign Up </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/signin"> Sign In </nuxt-link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </template>
   </main>
 </template>
