@@ -1,6 +1,7 @@
 @import 'definitions/typography.sass';
 @import 'definitions/colors.sass';
 @import 'helpers/typography.sass';
+@import 'helpers/float.sass';
 @import 'utilities/initial-variables.sass';
 @import 'utilities/functions.sass';
 @import 'utilities/derived-variables.sass';
@@ -12,6 +13,7 @@
 @import 'grid/columns.sass';
 @import 'grid/tiles.sass';
 @import 'helpers/spacing.sass';
+@import 'helpers/display.sass';
 
 html,
 body {
