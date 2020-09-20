@@ -51,13 +51,21 @@ export default {
       this.isLoading = true
       const { email, password } = this.user
       try {
-        await this.$fireAuth.signInWithEmailAndPassword(email, password)
-        this.$router.push('/dashboard')
-        this.isLoading = false
+        const { user } = await this.$fireAuth.signInWithEmailAndPassword(
+          email,
+          password
+        )
+        const doc = await this.$fireStore
+          .collection('lawyers')
+          .doc(user.uid)
+          .get()
+        if (doc.exists) this.$router.push('/lawyer')
+        else this.$router.push('/dashboard')
       } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e)
       }
+      this.isLoading = false
     }
   }
 }
