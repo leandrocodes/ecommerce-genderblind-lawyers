@@ -9,9 +9,17 @@
         </li>
       </ul>
     </nav>
-
-    <section>
-      <form @submit.prevent="signUp">
+    <section class="form__section d-flex jc-center">
+      <form class="d-flex fd-column" @submit.prevent="signUp">
+        <label for="nome" class="mt-4">Nome completo:</label>
+        <input
+          id="nome"
+          v-model="user.name"
+          placeholder="Nome"
+          type="text"
+          name="name"
+        />
+        <label for="email" class="mt-4">Email:</label>
         <input
           id="email"
           v-model="user.email"
@@ -19,6 +27,23 @@
           type="email"
           name="email"
         />
+        <label for="phone" class="mt-4">Telefone:</label>
+        <input
+          id="phone"
+          v-model="user.phone"
+          placeholder="Telefone"
+          type="number"
+          name="phone number"
+        />
+        <label for="subscription" class="mt-4">Inscrição:</label>
+        <input
+          id="subscription"
+          v-model="user.subscription"
+          placeholder="Inscrição"
+          type="text"
+          name="subscription"
+        />
+        <label for="password" class="mt-4">Senha:</label>
         <input
           id="password"
           v-model="user.password"
@@ -26,7 +51,7 @@
           type="password"
           name="password"
         />
-        <input type="submit" value="Create User" />
+        <input type="submit" :value="inputValue" class="mt-4" />
       </form>
     </section>
   </div>
@@ -36,19 +61,27 @@
 export default {
   data: () => ({
     user: {
+      name: '',
       email: '',
+      phone: '',
+      subscription: '',
       password: ''
-    }
+    },
+    inputValue: 'Register'
   }),
   methods: {
     async signUp() {
+      this.inputValue = 'Carregando...'
       const { email, password } = this.user
       try {
         await this.$fireAuth.createUserWithEmailAndPassword(email, password)
-        await this.$fireStore.collection('users').add({
-          name: 'Asda',
-          surname: 'Fjkl'
+        await this.$fireStore.collection('lawyers').add({
+          name: this.user.name,
+          subscription: this.user.subscription,
+          phone: this.user.phone
         })
+        this.inputValue = 'Register'
+        this.$router.push({ name: 'dashboard' })
         // console.log(id)
       } catch (e) {
         // eslint-disable-next-line no-console
@@ -59,4 +92,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.form__section {
+  form {
+    width: 30vw;
+  }
+}
+</style>
