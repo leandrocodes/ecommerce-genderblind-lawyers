@@ -5,7 +5,7 @@
     <nav>
       <ul>
         <li>
-          <nuxt-link to="/signup"> Back </nuxt-link>
+          <nuxt-link to="/"> Back </nuxt-link>
         </li>
       </ul>
     </nav>
