@@ -14,13 +14,13 @@
           <div class="boxes mt-6 pb-2">
             <div class="row center-xs">
               <div class="col-xs-8">
-                <div class="black__box pt-6 pb-4 px-4">
+                <div class="black__box pt-5 pb-3 px-3">
                   <p class="fw-bold">HIGH RATED</p>
                   <p class="mt-2">Most Recommended</p>
                 </div>
               </div>
               <div class="col-xs-8">
-                <div class="black__box pt-6 pb-4 px-4">
+                <div class="black__box pt-5 pb-3 px-3">
                   <p class="fw-bold">LATEST LAWYERS</p>
                   <p class="mt-2">Recent Registered</p>
                 </div>
@@ -31,16 +31,22 @@
       </div>
 
       <div class="col-xs-12 col-md-6">
-        <nav class="txt-upper">
-          <ul>
-            <li>
-              <nuxt-link to="/signup"> Sign Up </nuxt-link>
-            </li>
-            <li>
-              <nuxt-link to="/signin"> Sign In </nuxt-link>
-            </li>
-          </ul>
-        </nav>
+        <section class="options">
+          <div class="options__text mt-2">
+            <h2 class="fw-normal">Find Yours</h2>
+            <h1 class="fw-bold">Now</h1>
+          </div>
+          <nav class="txt-upper mt-5">
+            <ul>
+              <li>
+                <nuxt-link to="/signup"> Sign Up </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/signin"> Sign In </nuxt-link>
+              </li>
+            </ul>
+          </nav>
+        </section>
       </div>
     </template>
   </main>
@@ -68,7 +74,7 @@ export default {
 }
 
 .hero {
-  min-height: 65vh;
+  max-height: 70vh;
   background-color: rgba($color: $peep, $alpha: 0.15);
   .hero__title {
     h1,
@@ -88,9 +94,33 @@ export default {
     text-align: right;
     text-transform: uppercase;
     p {
+      font-size: 0.9rem;
       &:last-child {
-        font-size: 0.75rem;
+        font-size: 0.725rem;
       }
+    }
+  }
+}
+
+.options {
+  .options__text {
+    h1,
+    h2 {
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.25rem;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  nav > ul {
+    display: flex;
+    justify-content: space-around;
+    li > a {
+      text-decoration: none;
+      color: $text;
     }
   }
 }
