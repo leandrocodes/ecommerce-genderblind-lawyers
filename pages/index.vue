@@ -36,7 +36,7 @@
             <h2 class="fw-normal">Find Yours</h2>
             <h1 class="fw-bold">Now</h1>
           </div>
-          <nav class="txt-upper mt-5">
+          <nav class="txt-upper mt-6">
             <ul>
               <li>
                 <nuxt-link to="/signup"> Sign Up </nuxt-link>
