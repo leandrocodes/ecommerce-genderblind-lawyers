@@ -77,16 +77,17 @@ export default {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
+  padding: 0 1rem;
 }
 
 header {
+  max-height: 70vh;
+  width: 100%;
   nav {
     display: flex;
     justify-content: flex-start;
-    .material-icons {
-      font-size: 2.25rem;
-      max-width: 15vw;
-    }
+    align-items: center;
+    margin-top: 1.25rem;
     h1 {
       width: 100%;
       text-align: center;
@@ -94,7 +95,8 @@ header {
   }
   img {
     min-width: 80vw;
-    margin: 2rem 0;
+    display: block;
+    margin: 2rem auto;
   }
 }
 

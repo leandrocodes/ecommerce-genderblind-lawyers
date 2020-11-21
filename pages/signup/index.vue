@@ -1,8 +1,34 @@
 <template>
   <div class="container">
-    <nuxt-link to="/"> Back </nuxt-link>
-    <nuxt-link to="/signup/user"><h1>Registrar como usuário</h1></nuxt-link>
-    <nuxt-link to="/signup/lawyer"><h2>Registrar como advogado</h2></nuxt-link>
+    <header>
+      <nav>
+        <nuxt-link to="/"><i class="material-icons">arrow_back</i></nuxt-link>
+        <h1 class="title"><span class="fw-normal">Sign</span> Up</h1>
+      </nav>
+
+      <img src="../../assets/images/signup-1.svg" alt="Sign Up Picture" />
+    </header>
+
+    <main>
+      <div class="row">
+        <nuxt-link to="/signup/user">
+          <div class="link">
+            <i class="material-icons">favorite</i>
+            <p>Registrar como usuário</p>
+            <i class="material-icons">arrow_forward</i>
+          </div>
+        </nuxt-link>
+      </div>
+      <div class="row">
+        <nuxt-link to="/signup/lawyer">
+          <div class="link">
+            <i class="material-icons">business_center</i>
+            <p>Registrar como advogado</p>
+            <i class="material-icons">arrow_forward</i>
+          </div>
+        </nuxt-link>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -10,4 +36,68 @@
 export default {}
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.container {
+  background-color: rgba($color: $primary, $alpha: 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+header {
+  max-height: 70vh;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1.25rem;
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  img {
+    height: 100%;
+    display: block;
+    margin: 2rem auto;
+  }
+}
+
+main {
+  background-color: $bg-color;
+  min-height: 30vh;
+  min-width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .row {
+    a {
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      color: $deep-green;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .link {
+      margin: 1rem 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      height: 100px;
+      padding: 0 1rem;
+      border-radius: 12px;
+      .material-icons {
+        color: $deep-green;
+        text-decoration: none;
+      }
+    }
+  }
+}
+</style>
