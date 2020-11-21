@@ -1,13 +1,6 @@
 <template>
   <div class="container">
-    <header>
-      <nav>
-        <nuxt-link to="/"><i class="material-icons">arrow_back</i></nuxt-link>
-        <h1 class="title"><span class="fw-normal">Sign</span> In</h1>
-      </nav>
-
-      <img src="../assets/images/sign-in.svg" alt="Sign In Picture" />
-    </header>
+    <vheader :title="['Sign', 'In']" :image="'sign-in'" />
 
     <main>
       <form @submit.prevent="login">
@@ -79,27 +72,6 @@ export default {
   flex-direction: column;
   padding: 0 1rem;
 }
-
-header {
-  max-height: 70vh;
-  width: 100%;
-  nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 1.25rem;
-    h1 {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  img {
-    min-width: 80vw;
-    display: block;
-    margin: 2rem auto;
-  }
-}
-
 main {
   background-color: white;
   min-height: 50vh;
