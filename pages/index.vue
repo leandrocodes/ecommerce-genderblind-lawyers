@@ -118,6 +118,11 @@ export default {
   nav > ul {
     display: flex;
     justify-content: space-around;
+    li {
+      border: 1px solid $text;
+      border-radius: 4px;
+      padding: 0.75rem 1.15rem;
+    }
     li > a {
       text-decoration: none;
       color: $text;

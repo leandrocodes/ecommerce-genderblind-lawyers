@@ -4,17 +4,19 @@
 
     <main class="form__section">
       <form @submit.prevent="login">
+        <label for="email" class="mt-4">Email:</label>
         <input
           id="email"
           v-model="user.email"
-          placeholder="Email"
+          placeholder="joaosilva@gmail.com"
           type="email"
           name="email"
         />
+        <label for="email" class="mt-4">Password:</label>
         <input
           id="password"
           v-model="user.password"
-          placeholder="Password"
+          placeholder="*******"
           type="password"
           name="password"
         />
