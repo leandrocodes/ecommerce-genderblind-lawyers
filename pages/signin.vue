@@ -2,7 +2,7 @@
   <div class="container">
     <vheader :title="['Sign', 'In']" :image="'sign-in'" />
 
-    <main>
+    <main class="form__section">
       <form @submit.prevent="login">
         <input
           id="email"
@@ -71,39 +71,5 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
-}
-main {
-  background-color: white;
-  min-height: 50vh;
-  min-width: 100vw;
-  form {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    input {
-      border: 2px solid $secondary;
-      margin: 1.25rem 1.5rem;
-      border-radius: 55px;
-      padding: 1rem;
-      transition: all 150ms ease-in-out;
-      &::placeholder {
-        color: $secondary;
-      }
-      &:focus {
-        outline: none;
-        padding: 1.1rem;
-        font-size: 1rem;
-      }
-    }
-    input[type='submit'] {
-      position: fixed;
-      bottom: 0;
-      background-color: $secondary;
-      color: $linen;
-      font-weight: bold;
-      width: 100%;
-      max-width: calc(100vw - 2.5rem);
-    }
-  }
 }
 </style>

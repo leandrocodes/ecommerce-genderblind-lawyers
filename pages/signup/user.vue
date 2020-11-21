@@ -2,7 +2,7 @@
   <div class="container">
     <vheader :title="['Sign', 'Up']" :image="'signup-form'" />
 
-    <main>
+    <main class="form__section">
       <form @submit.prevent="signUp">
         <label for="nome" class="mt-4">Nome completo:</label>
         <input
@@ -90,12 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.form__section {
-  form {
-    width: 30vw;
-  }
-}
-
 .container {
   background-color: rgba($color: $primary, $alpha: 0.15);
   display: flex;
@@ -103,45 +97,5 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
-}
-
-main {
-  background-color: white;
-  min-height: 50vh;
-  min-width: 100vw;
-  form {
-    margin-top: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    input {
-      border: 2px solid $secondary;
-      margin: 1.25rem 1.5rem;
-      border-radius: 55px;
-      padding: 1rem;
-      transition: all 150ms ease-in-out;
-      color: $secondary;
-      &::placeholder {
-        color: rgba($color: $secondary, $alpha: 0.65);
-        // color: $secondary;
-      }
-      &:focus {
-        outline: none;
-        padding: 1.1rem;
-        font-size: 1rem;
-      }
-    }
-    input[type='submit'] {
-      background-color: $secondary;
-      color: $linen;
-      font-weight: bold;
-      width: 50%;
-      margin-left: auto;
-    }
-    label {
-      margin-left: 1.5rem;
-      color: $secondary;
-      font-weight: bold;
-    }
-  }
 }
 </style>

@@ -1,13 +1,6 @@
 <template>
   <div class="container">
-    <header>
-      <nav>
-        <nuxt-link to="/"><i class="material-icons">arrow_back</i></nuxt-link>
-        <h1 class="title"><span class="fw-normal">Sign</span> Up</h1>
-      </nav>
-
-      <img src="../../assets/images/signup-1.svg" alt="Sign Up Picture" />
-    </header>
+    <vheader :title="['Sign', 'Up']" :image="'signup-1'" />
 
     <main>
       <div class="row">
@@ -33,7 +26,12 @@
 </template>
 
 <script>
-export default {}
+import vheader from '@/components/ui/vheader'
+export default {
+  components: {
+    vheader
+  }
+}
 </script>
 
 <style lang="scss" scoped>
