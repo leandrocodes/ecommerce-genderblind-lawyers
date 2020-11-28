@@ -8,7 +8,7 @@
       </h1>
     </nav>
 
-    <img :src="`/_nuxt/assets/images/${image}.svg`" alt="Sign Up Picture" />
+    <img :src="require(`~/assets/images/${image}.svg`)" alt="Sign Up Picture" />
   </header>
 </template>
 
