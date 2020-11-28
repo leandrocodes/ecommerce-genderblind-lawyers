@@ -1,6 +1,7 @@
 .form__section {
   background-color: white;
-  min-height: 50vh;
+  height: auto;
+  padding-bottom: 0.5rem;
   min-width: 100vw;
   form {
     margin-top: 1.25rem;
@@ -29,6 +30,7 @@
       font-weight: bold;
       width: 50%;
       margin-left: auto;
+      margin-bottom: 0;
     }
     label {
       margin-left: 1.5rem;

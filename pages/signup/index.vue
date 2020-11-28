@@ -42,6 +42,7 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
+  max-height: 100vh;
 }
 
 header {
@@ -91,6 +92,9 @@ main {
       height: 100px;
       padding: 0 1rem;
       border-radius: 12px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
       .material-icons {
         color: $deep-green;
         text-decoration: none;

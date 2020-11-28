@@ -1,5 +1,5 @@
 <template>
-  <main class="row">
+  <main class="index__page">
     <template v-if="isLoading">
       <h1>Carregando...</h1>
     </template>
@@ -14,13 +14,13 @@
           <div class="boxes mt-6 pb-2">
             <div class="row center-xs">
               <div class="col-xs-8">
-                <div class="black__box pt-5 pb-3 px-3">
+                <div class="green__box py-5 px-4">
                   <p class="fw-bold">HIGH RATED</p>
                   <p class="mt-2">Most Recommended</p>
                 </div>
               </div>
               <div class="col-xs-8">
-                <div class="black__box pt-5 pb-3 px-3">
+                <div class="green__box py-5 px-4">
                   <p class="fw-bold">LATEST LAWYERS</p>
                   <p class="mt-2">Recent Registered</p>
                 </div>
@@ -67,6 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.index__page {
+  max-height: 100vh;
+}
+
 .container {
   min-height: 60vh;
   padding-top: 2rem;
@@ -88,11 +92,12 @@ export default {
       font-size: 3rem;
     }
   }
-  .black__box {
-    background-color: black;
+  .green__box {
+    background-color: $secondary;
     color: white;
     text-align: right;
     text-transform: uppercase;
+    border-radius: 4px;
     p {
       font-size: 0.9rem;
       &:last-child {

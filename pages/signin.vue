@@ -73,5 +73,6 @@ export default {
   justify-content: flex-start;
   flex-direction: column;
   padding: 0 1rem;
+  max-height: 100vh;
 }
 </style>
