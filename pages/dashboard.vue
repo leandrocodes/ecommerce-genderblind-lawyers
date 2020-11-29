@@ -1,18 +1,39 @@
 <template>
   <div class="container">
-    <h1 class="title">Dashboard</h1>
-    <nav>
-      <ul>
-        <li>
-          <button @click="signout">Sign Out</button>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <nuxt-link to="/signin"
+          ><i class="material-icons">arrow_back</i></nuxt-link
+        >
+        <h1 class="title"><span class="fw-normal"> Lawyers </span> List</h1>
+      </nav>
+    </header>
+    <div class="lawyer__list">
+      <lawyer
+        v-for="(lawyer, index) in lawyers"
+        :key="index"
+        :lawyer="lawyer"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import lawyer from '../components/lawyer'
 export default {
+  components: {
+    lawyer
+  },
+  data: () => ({
+    lawyers: []
+  }),
+  async created() {
+    const lawyersRef = this.$fireStore.collection('lawyers')
+    const lawyers = await lawyersRef.get()
+    if (!lawyers.empty) {
+      lawyers.forEach(lawyer => this.lawyers.push(lawyer.data()))
+    }
+  },
   methods: {
     async signout() {
       await this.$fireAuth.signOut()
@@ -22,4 +43,25 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+header {
+  max-height: 70vh;
+  width: 100%;
+  nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1.25rem;
+    h1 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+.lawyer__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+}
+</style>

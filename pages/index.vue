@@ -55,13 +55,13 @@
 <script>
 export default {
   data: () => ({
-    isLoading: true
+    isLoading: false
   }),
   beforeCreate() {
-    this.$fireAuth.onAuthStateChanged(user => {
-      if (user) this.$router.push('/dashboard')
-      else this.isLoading = false
-    })
+    // this.$fireAuth.onAuthStateChanged(user => {
+    //   if (user) this.$router.push('/dashboard')
+    //   else this.isLoading = false
+    // })
   }
 }
 </script>
