@@ -11,7 +11,7 @@
       </div>
       <div class="profile__name">{{ lawyer.name }}</div>
       <div class="profile__specification">
-        <i class="material-icons">work_outline</i>
+        <i class="mdi mdi-briefcase-outline"></i>
         Direito Trabalhista
       </div>
     </main>
@@ -27,11 +27,6 @@ export default {
     lawyer: {
       type: Object,
       required: true
-    },
-    gender: {
-      type: String,
-      required: true,
-      default: 'female'
     }
   },
   data: () => ({})
@@ -40,7 +35,7 @@ export default {
 
 <style lang="scss" scoped>
 .lawyer__card {
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.15rem;
   width: 85%;
   background: white;
   border-left: 10px solid $secondary;
@@ -53,14 +48,15 @@ export default {
 
 .profile__name {
   font-weight: bold;
+  font-size: 18px;
+  margin: 0.5rem 0;
 }
 
 .profile__specification {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
   color: $dark-text;
-  .material-icons {
+  .mdi {
     font-size: 26px;
     margin-right: 2.5px;
     color: $dark-text;
