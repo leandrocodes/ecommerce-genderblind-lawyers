@@ -72,7 +72,8 @@ export default {
           firestore: true
         }
       }
-    ]
+    ],
+    'nuxtjs-mdi-font'
   ],
   // buildModules: ['@nuxtjs/style-resources'],
   styleResources: {
