@@ -27,17 +27,19 @@ export default {
   data: () => ({
     lawyers: []
   }),
-  async created() {
-    const lawyersRef = this.$fireStore.collection('lawyers')
-    const lawyers = await lawyersRef.get()
-    if (!lawyers.empty) {
-      lawyers.forEach(lawyer => this.lawyers.push(lawyer.data()))
-    }
+  created() {
+    this.fetchLawyers()
   },
   methods: {
     async signout() {
       await this.$fireAuth.signOut()
       this.$router.push('/')
+    },
+    async fetchLawyers() {
+      const lawyers = await this.$fireStore.collection('lawyers').get()
+      if (!lawyers.empty) {
+        lawyers.forEach(lawyer => this.lawyers.push(lawyer.data()))
+      }
     }
   }
 }
