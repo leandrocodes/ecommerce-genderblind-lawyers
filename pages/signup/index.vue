@@ -6,7 +6,7 @@
       <div class="row">
         <nuxt-link to="/signup/user">
           <div class="link">
-            <i class="material-icons">favorite</i>
+            <img src="../../assets/icons/heart.svg" width="92px" />
             <p>Registrar como usuário</p>
             <i class="material-icons">arrow_forward</i>
           </div>
@@ -15,7 +15,7 @@
       <div class="row">
         <nuxt-link to="/signup/lawyer">
           <div class="link">
-            <i class="material-icons">business_center</i>
+            <img src="../../assets/icons/fist.svg" width="92px" />
             <p>Registrar como advogado</p>
             <i class="material-icons">arrow_forward</i>
           </div>
@@ -79,7 +79,7 @@ main {
       width: 100%;
       text-align: center;
       text-decoration: none;
-      color: $deep-green;
+      color: $secondary;
       font-weight: bold;
       font-size: 1rem;
     }
@@ -90,13 +90,13 @@ main {
       align-items: center;
       background-color: white;
       height: 100px;
-      padding: 0 1rem;
+      padding: 0 0.5rem;
       border-radius: 12px;
       &:last-of-type {
         margin-bottom: 0;
       }
       .material-icons {
-        color: $deep-green;
+        color: $secondary;
         text-decoration: none;
       }
     }
