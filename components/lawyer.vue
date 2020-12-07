@@ -15,7 +15,7 @@
         Direito Trabalhista
       </div>
     </main>
-    <button class="cta__button">
+    <button class="cta__button" @click="goToLawyer()">
       <i class="mdi mdi-arrow-right-circle-outline"></i>
     </button>
   </div>
@@ -29,7 +29,12 @@ export default {
       required: true
     }
   },
-  data: () => ({})
+  data: () => ({}),
+  methods: {
+    goToLawyer() {
+      this.$router.push(`/lawyer-resume/${this.lawyer.subscription}`)
+    }
+  }
 }
 </script>
 
