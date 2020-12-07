@@ -27,7 +27,11 @@
         </div>
         <div class="profile__status">
           <div class="profile__pic">
-            <img src="../../assets/images/dummy.jpg" alt="" srcset="" />
+            <img
+              :src="require(`~/assets/images/${randomProfile}.png`)"
+              alt=""
+              srcset=""
+            />
             <div class="status"></div>
             <div class="profile__rating">
               <i class="mdi mdi-star"></i>
@@ -57,7 +61,9 @@
 </template>
 
 <script>
+import userImage from '../../mixins/userImage'
 export default {
+  mixins: [userImage],
   async fetch() {
     const query = await this.$fireStore
       .collection('lawyers')

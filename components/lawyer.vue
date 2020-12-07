@@ -1,7 +1,11 @@
 <template>
   <div class="lawyer__card">
     <div class="profile__pic">
-      <img src="../assets/images/dummy.jpg" alt="" srcset="" />
+      <img
+        :src="require(`~/assets/images/${randomProfile}.png`)"
+        alt=""
+        srcset=""
+      />
       <div class="status"></div>
     </div>
     <main class="profile__main">
@@ -22,7 +26,9 @@
 </template>
 
 <script>
+import userImage from '../mixins/userImage'
 export default {
+  mixins: [userImage],
   props: {
     lawyer: {
       type: Object,
