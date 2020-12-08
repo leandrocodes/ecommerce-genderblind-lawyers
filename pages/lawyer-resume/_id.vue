@@ -7,7 +7,8 @@
         </nuxt-link>
       </nav>
     </header>
-    <div class="profile__card">
+
+    <div v-if="!$fetchState.pending" class="profile__card">
       <h1 class="profile__name">
         {{ lawyer.name }}
       </h1>
@@ -55,6 +56,53 @@
           <i class="mdi mdi-message"></i>
           Comment
         </button>
+      </div>
+    </div>
+
+    <div class="profile__comments">
+      <div class="comment">
+        <div class="profile">
+          <img :src="require(`~/assets/images/${randomProfile}.png`)" />
+          <div class="profile__text">
+            <p class="comment__name">Natasha Maria</p>
+            <p class="timestamp">Today at 07:18 - Bela Vista, MS</p>
+          </div>
+        </div>
+        <div class="comment__text">
+          <p>
+            Lorem Ipsum will go here. Lorem Ipsum will go here. Lorem Ipsum will
+            go here. Lorem Ipsum will go here.
+          </p>
+        </div>
+        <div class="rating">
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+        </div>
+      </div>
+      <div class="comment">
+        <div class="profile">
+          <img :src="require(`~/assets/images/${randomProfile}.png`)" />
+          <div class="profile__text">
+            <p class="comment__name">Taisa Amorim</p>
+            <p class="timestamp">Yesterday at 20:38 - Antonio João, MS</p>
+          </div>
+        </div>
+        <div class="comment__text">
+          <p>
+            Lorem Ipsum will go here. Lorem Ipsum will go here. Lorem Ipsum will
+            go here. Lorem Ipsum will go here.
+          </p>
+        </div>
+        <div class="rating">
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+          <i class="mdi mdi-star"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -201,6 +249,50 @@ main {
   }
   .mdi.mdi-send::before {
     transform: rotate(-45deg);
+  }
+}
+
+.profile__comments {
+  margin-top: 0.75rem;
+  color: $dark-text;
+  .comment {
+    padding: 1rem 0.5rem;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 1.5px 1.5px 12px rgba(0, 0, 0, 0.05);
+    .profile {
+      display: flex;
+      align-items: center;
+      .profile__text {
+        margin-left: 0.5rem;
+        .comment__name {
+          font-weight: bold;
+        }
+        .timestamp {
+          font-size: 12px;
+        }
+      }
+    }
+    .comment__text,
+    .rating {
+      margin-left: calc(64px + 0.5rem);
+    }
+    .rating {
+      margin-top: 1rem;
+      .mdi {
+        color: #fcc946;
+        font-size: 1.5rem;
+        &:last-child {
+          color: $dark-text;
+        }
+      }
+    }
+    &:last-child {
+      margin-top: 1rem;
+      .mdi:last-child {
+        color: #fcc946;
+      }
+    }
   }
 }
 </style>

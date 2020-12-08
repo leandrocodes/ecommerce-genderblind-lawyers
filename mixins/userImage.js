@@ -1,6 +1,6 @@
 const userImageMixin = {
   data: () => ({
-    profiles: ['dummy', 'bigode', 'chanel', 'chiquinha']
+    profiles: ['dummy', 'bigode', 'chanel', 'chiquinha', 'afro', 'punk']
   }),
   computed: {
     randomProfile() {
