@@ -2,9 +2,7 @@
   <div class="container">
     <header>
       <nav>
-        <nuxt-link to="/signin"
-          ><i class="material-icons">arrow_back</i></nuxt-link
-        >
+        <nuxt-link to="/"><i class="material-icons">arrow_back</i></nuxt-link>
         <h1 class="title"><span class="fw-normal"> Lawyers </span> List</h1>
       </nav>
     </header>

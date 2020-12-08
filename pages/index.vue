@@ -56,14 +56,7 @@
 export default {
   data: () => ({
     isLoading: false
-  }),
-  beforeCreate() {
-    this.$fireAuth.onAuthStateChanged(user => {
-      // TODO: Check if is lawyer
-      if (user) this.$router.push('/dashboard')
-      else this.isLoading = false
-    })
-  }
+  })
 }
 </script>
 
