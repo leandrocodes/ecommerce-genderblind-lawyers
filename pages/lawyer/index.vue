@@ -29,7 +29,7 @@ export default {
       const users = await this.$fireStore.collection('users').get()
       if (!users.empty) {
         users.forEach(user => {
-          for (let i = 0; i < 3; i++) this.users.push(user.data())
+          this.users.push(user.data())
         })
       }
     }
