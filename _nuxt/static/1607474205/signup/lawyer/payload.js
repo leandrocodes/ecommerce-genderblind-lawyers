@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/signup/lawyer", {data:[{}],fetch:[],mutations:[]});
